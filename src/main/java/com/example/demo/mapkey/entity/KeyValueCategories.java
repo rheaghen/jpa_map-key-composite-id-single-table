@@ -9,7 +9,6 @@ import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.MapKey;
-import javax.persistence.MapKeyColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -33,7 +32,7 @@ public class KeyValueCategories implements Serializable {
 		@JoinColumn(name = "subCategoryId",  referencedColumnName = "subCategoryId")
 		}
 	)
-	@MapKeyColumn(name="key",insertable = false, table = "key_value")
+	@MapKey(name="key")
 	private Map<String, KeyValue> keyMap;
 
 	public static long getSerialversionuid() {
