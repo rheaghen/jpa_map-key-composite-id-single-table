@@ -1,0 +1,10 @@
+H2: 
+currently setup to use a static/unchanging file based h2 database. You'll need to fire up an h2 console and run the schema.sql and data.sql files before running the tests
+remember to disconnect from the console before starting the test. 
+optional - 
+   copy/replace the ./sql/h2/application.properties to the src/test/resources if youre switching from the postgres config
+   if youre using ios/linux - be sure to update the h2 datasource url in the application.properties
+
+POSTGRES:
+either try the ./sql/postgres/POSTGRES_BAK.sql OR setup the tables manually and then execute the ./sql/postgres/schema.sql & ./sql/postgres/data.sql
+also copy/replace the ./sql/postgres/application.properties to the src/test/resources

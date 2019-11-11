@@ -22,3 +22,5 @@ CREATE VIEW public.key_value_categories AS
 ALTER TABLE public.key_value_categories OWNER TO postgres;
 
 	 
+ALTER TABLE ONLY public.key_value
+    ADD CONSTRAINT KEY_VALUE_pkey PRIMARY KEY (id);
