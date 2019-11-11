@@ -14,6 +14,7 @@ import org.springframework.util.Assert;
 import com.example.demo.mapkey.entity.KeyValue;
 import com.example.demo.mapkey.entity.KeyValueCategories;
 import com.example.demo.mapkey.repo.KeyValueCategoriesRepo;
+import com.example.demo.mapkey.repo.KeyValueRepo;
 
 @SpringBootTest
 public class KeyValueCategoriesRepoTest {
@@ -21,19 +22,29 @@ public class KeyValueCategoriesRepoTest {
 	@Autowired
 	KeyValueCategoriesRepo kvsRepo;
 
+	@Autowired
+	KeyValueRepo kvRepo;
+
 	@Test
 	@Transactional
-	void testMapData() {	
+	void testMapData() {
+		
+		List<KeyValue> kvList = kvRepo.findAll();
+		boolean hasData = !kvList.isEmpty();
+		Assert.isTrue(hasData,"no keyValue data found");
+		KeyValue kv = kvList.get(0);
 		Category id = new Category();
-		id.setCategoryId(1);
-		id.setSubCategoryId(1);
+		id.setCategoryId(kv.getCategoryId());
+		id.setSubCategoryId(kv.getSubCategoryId());
+
 		Optional<KeyValueCategories> result = kvsRepo.findById(id);
-		boolean hasData = result.isPresent();
+		hasData = result.isPresent();
 		Assert.isTrue(hasData,"no data found");
+		
 		KeyValueCategories kvc = result.get();
-		Map<String,KeyValue> kv = kvc.getKeyMap();
-		Assert.isTrue(kv.isEmpty(),"data map empty");
-		Assert.isTrue(kv.size()==5,"data map improperly implemented");
+		Map<String,KeyValue> kvMap = kvc.getKeyMap();
+		Assert.isTrue(kvMap.isEmpty(),"data map empty");
+		Assert.isTrue(kvMap.size()==5,"data map improperly implemented");
 		
 	}
 
