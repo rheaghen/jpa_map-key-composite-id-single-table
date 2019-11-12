@@ -1,18 +1,18 @@
-drop VIEW IF EXISTS key_value_categories;
+drop VIEW IF EXISTS template_categories;
 
-drop TABLE IF EXISTS key_value;
+drop TABLE IF EXISTS template_entry;
 
-CREATE TABLE key_value 
+CREATE TABLE template_entry 
 (
-	id               INT             NOT NULL,
-	category_id      INT             NOT NULL,
-	sub_category_id  INT             NOT NULL,
-   	key              VARCHAR(50)     NOT NULL, 
-    value            VARCHAR(255)    NULL
+	id          INT             NOT NULL,
+	org_id      INT             NOT NULL,
+	template_id INT             NOT NULL,
+   	key         VARCHAR(50)     NOT NULL, 
+    value       VARCHAR(255)    NULL
 );
 
- CREATE VIEW key_value_categories AS SELECT DISTINCT category_id,  sub_category_id FROM  KEY_VALUE;
+ CREATE VIEW template_categories AS SELECT DISTINCT org_id,  template_id FROM  template_entry;
  
- ALTER TABLE key_value ADD PRIMARY KEY (id,category_id, sub_category_id);
+ ALTER TABLE template_entry ADD PRIMARY KEY (id,org_id, template_id);
 
  
