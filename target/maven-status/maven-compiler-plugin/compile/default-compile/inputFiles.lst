@@ -1,0 +1,7 @@
+/home/ryan/src/rm/jpa_map-key-composite-id-single-table/src/main/java/com/example/demo/mapkey/TemplateEntryId.java
+/home/ryan/src/rm/jpa_map-key-composite-id-single-table/src/main/java/com/example/demo/mapkey/repo/TemplateCategoryRepo.java
+/home/ryan/src/rm/jpa_map-key-composite-id-single-table/src/main/java/com/example/demo/mapkey/entity/TemplateCategory.java
+/home/ryan/src/rm/jpa_map-key-composite-id-single-table/src/main/java/com/example/demo/mapkey/TemplateCategoryId.java
+/home/ryan/src/rm/jpa_map-key-composite-id-single-table/src/main/java/com/example/demo/mapkey/repo/TemplateEntryRepo.java
+/home/ryan/src/rm/jpa_map-key-composite-id-single-table/src/main/java/com/example/demo/mapkey/entity/TemplateEntry.java
+/home/ryan/src/rm/jpa_map-key-composite-id-single-table/src/main/java/com/example/demo/TemplateApplication.java
