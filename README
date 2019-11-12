@@ -1,6 +1,5 @@
 H2: 
-currently setup to use a static/unchanging file based h2 database. You'll need to fire up an h2 console and run the schema.sql and data.sql files before running the tests
-remember to disconnect from the console before starting the test. 
+currently setup to use a static/unchanging file based h2 database. 
 optional - 
    copy/replace the ./sql/h2/application.properties to the src/test/resources if youre switching from the postgres config
    if youre using ios/linux - be sure to update the h2 datasource url in the application.properties
